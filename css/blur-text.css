@@ -1,0 +1,4 @@
+body {
+    -webkit-filter: blur(.1em) brightness(120%);
+            filter: blur(.1em) brightness(120%);
+  }

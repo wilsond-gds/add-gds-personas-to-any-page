@@ -1,0 +1,41 @@
+body *, *+* {all:unset;}
+head {padding: 0 !important; }
+body script {display:none !important;}
+style {display:none !important;}
+title {color:red !important;}
+meta {display:none !important;}
+title:before {content:'page title '; font-weight:bold;}
+html {padding: 1rem !important;}
+*,button,input {font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important; display:inline-block !important; font-weight:normal !important; font-size: 1.6rem !important; border:0 !important; background-color: white !important; color: #333 !important; padding:0 !important; line-height:1.35 !important; vertical-align: auto !important; position:static !important; max-width: none !important; margin: 0 !important; background-image:none !important; text-decoration: none !important; box-shadow:none !important;}
+svg {display:none;}
+h1:before {content: 'heading one '; font-weight:bold;}
+h2:before {content: 'heading two '; font-weight:bold;}
+h3:before {content: 'heading three '; font-weight:bold;}
+h4:before {content: 'heading four '; font-weight:bold;}
+h5:before {content: 'heading five '; font-weight:bold;}
+ul:before {content: 'unordered list '; font-weight:bold;}
+ol:before {content: 'ordered list '; font-weight:bold;}
+a:before {content: 'link '; font-weight:bold;}
+li:before {content: 'list item: '; font-weight:bold;}
+a {display:block !important;}
+button:before {content: 'button ' !important; font-weight:bold !important; position:static !important; display:inline-block !important;  }
+footer:before {content: 'landmark, footer '; font-weight:bold; color: green;}
+nav:before {content: 'landmark, navigation '; font-weight:bold; color: green;}
+main:before {content: 'landmark, main '; font-weight:bold; color: green;}
+header:before {content: 'landmark, header '; font-weight:bold; color: green;}
+.govuk-visually-hidden {all:unset !important; position:static !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    clip: none !important;
+    -webkit-clip-path: none !important;
+    clip-path: none !important;
+    border: 0 !important;
+    white-space: wrap !important;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;}
+    .govuk-visually-hidden:before {content:'(visually hidden content)' !important; color: grey !important;}
+    .govuk-visually-hidden:after {content:'(visually hidden content ends)' !important; color: grey !important;}

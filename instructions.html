@@ -5,56 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accessibility Persona bookmarklet example</title>
     <style>
-        body {font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; line-height:1.35; max-width: 65ch; margin: 3rem auto;}
-        </style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.35;
+            max-width: 65ch;
+            margin: 3rem auto;
+        }
+
+        .notes {
+            background: #f7f7f7;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        .notes > * {
+            margin-top: 0;
+        }
+        ul {
+            margin: 0;
+            padding: 0; list-style-type: none;}
+        ul li {border-top: 1px solid #ccc; padding:1rem 2rem 1rem 0; margin-bottom: 1rem;}
+        ul li * {margin:0; padding: 0 0 0.2rem 0;}
+        ul li a {display:inline-block; padding: 0.5rem 1.2rem; border:1px solid #ddd; background: white; border-radius: 0.3rem; margin: 0.5rem 0;}
+    </style>
 </head>
-<body>             
+<body>
+
+<h1>Accessibility bookmarklets</h1>
 
 
-<!-- 
+<ul>
+    <li>
+        <h2>Claudia</h2><p>A sight impaired screen magnifier user</p>
+    </li>
+    <li>
+        <h2>Ashleigh</h2><p>A severely sight impaired screen reader user</p>
+        <p><a href="javascript:(function() {var link = document.createElement('link');link.rel = 'stylesheet';link.href = 'https://symphonious-boba-3a9fc8.netlify.app/css/screen-reader.css'; document.head.appendChild(link);})();">
+            Ashleigh, screenreader persona
+        </a></p>
+        <p>This persona will remove all images and layout.</p>
+    </li>
+    <li>
+        <h2>Ron</h2><p>An older user with multiple conditions</p>
+        <p><a href="javascript:(function() {var link = document.createElement('link');link.rel = 'stylesheet';link.href = 'https://symphonious-boba-3a9fc8.netlify.app/css/blur-text.css'; document.head.appendChild(link); var script = document.createElement('script');script.src = 'https://symphonious-boba-3a9fc8.netlify.app/js/wobbly-mouse.js';script.onload = function() { console.log('JavaScript loaded successfully.');};document.body.appendChild(script); })();">
+            Ron, older user persona
+        </a></p>
+        <p>This persona will blur the page content, increase contrast and reduce the accuracy of the mouse pointer.</p>
+    </li>
+    <li>
+        <h2>Chris</h2><p>A user with rheumatoid arthritis</p>
+        <p><a href="javascript:(function() {var link = document.createElement('link');link.rel = 'stylesheet';link.href = 'https://symphonious-boba-3a9fc8.netlify.app/css/hide-mouse.css'; document.head.appendChild(link);})();">
+            Chris, keyboard only persona
+        </a>  </p>
+        <p>Using this persona will hide the mouse pointer in the browser so you can only use the keyboard to complete tasks.</p>
+    </li>
+    <li>
+        <h2>Pawel</h2><p>A user with Asperger’s</p>
+    </li>
+    <li>
+        <h2>Simone</h2><p>A dyslexic user.</p>
+        <p><a href="javascript:(function() {var link = document.createElement('link');link.rel = 'stylesheet';link.href = 'https://symphonious-boba-3a9fc8.netlify.app/css/typography.css'; document.head.appendChild(link);var script = document.createElement('script');script.src = 'https://symphonious-boba-3a9fc8.netlify.app/js/mix-up-letters.js';script.onload = function() { console.log('JavaScript loaded successfully.');};document.body.appendChild(script); })();">
+            Simone, dyslexic persona
+        </a></p>
+        <p>Using this persona will move letters around in words randomly and change the typeface.</p>
+    </li>
+    <li>
+        <h2>Saleem</h2><p>A profoundly deaf user</p>
+    </li>
+</ul>
 
-Claudia – a sight impaired screen magnifier user
-- very high magnification for zoom
 
-Ashleigh – a severely sight impaired screen reader user
-- use the built-in screen reader (is this available for everyone?)
-
-Ron – an older user with multiple conditions
-
-Chris – a user with rheumatoid arthritis
-
-Pawel – a user with Asperger’s
-
-Simone – a dyslexic user
-
-Saleem – a profoundly deaf user 
-
--->
-
-
-    <h1>Example bookmarklet</h1>
-    <p>The CSS and JS for this bookmarklet are served locally. To start the bookmarklet, do <code>npx http-server --cors</code> on the desktop.</p>
-    <p>Then drag the link below to your bookmarks bar, or right-click and select "Bookmark this link":</p>
-    <p>Because of the security policy, this bookmarklet only works on <a href="https://govuk-one-login-prototype-6d2545e2d700.herokuapp.com/">the HTML prototype</a>. It’s not persistent either.</p>
-
-    <a href="javascript:(function() {var link = document.createElement('link');link.rel = 'stylesheet';link.href = 'http://127.0.0.1:8080/prototype-personas/css/typography.css'; document.head.appendChild(link);var script = document.createElement('script');script.src = 'http://127.0.0.1:8080/prototype-personas/js/mix-up-letters.js';script.onload = function() { console.log('JavaScript loaded successfully.');};document.body.appendChild(script); })();">
-       Simone, dyslexic persona
-    </a>
-
-
-    <h3>Keyboard only</h3>
-    <p>Using this persona will hide the mouse pointer in the browser so you can only use the keyboard to complete tasks.</p>
-
-    <a href="javascript:(function() {var link = document.createElement('link');link.rel = 'stylesheet';link.href = 'http://127.0.0.1:8080/prototype-personas/css/hide-mouse.css'; document.head.appendChild(link);})();">
-        Chris, keyboard only persona
-    </a>
-
-    <h3>Screen reader/linear rendering</h3>
-    <p>This persona will remove all images and layout.</p>
-
-    <a href="javascript:(function() {var link = document.createElement('link');link.rel = 'stylesheet';link.href = 'http://127.0.0.1:8080/prototype-personas/css/screen-reader.css'; document.head.appendChild(link);})();">
-        Ashleigh, screenreader persona
-    </a>
-
+<div class="notes">
+    <h3>Notes</h3>
+    <p>The CSS and JS for this bookmarklet are served from Netlify.</p>
+    <p>Drag links below to your bookmarks bar, or right-click and select ‘Bookmark this link’.</p>
+    <p>Because of the security policy, this bookmarklet only works on <a
+            href="https://govuk-one-login-prototype-6d2545e2d700.herokuapp.com/">the HTML prototype</a>. It’s not
+        persistent either.</p>
+</div>
 </body>
 </html>

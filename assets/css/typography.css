@@ -12,7 +12,7 @@
     font-family: "Open dyslexic";
     font-style: normal;
     font-weight: normal;
-    src: url(../fonts/opendyslexic-regular-webfont.woff) format("woff");
+    src: url(https://symphonious-boba-3a9fc8.netlify.app/fonts/opendyslexic-regular-webfont.woff) format("woff");
     font-display: fallback
 }
 

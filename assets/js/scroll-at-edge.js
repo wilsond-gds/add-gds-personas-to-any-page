@@ -1,4 +1,4 @@
-(function() {
+(function () {
 
     var edgeSize = 50;
     var scrollTimer = null;
@@ -69,7 +69,7 @@
             var currentScrollY = window.pageYOffset;
 
             // Determine if the window can be scrolled in any particular direction.
-            var canScrollUp = currentScrollY > 0 ;
+            var canScrollUp = currentScrollY > 0;
             var canScrollDown = currentScrollY < maxScrollY;
             var canScrollLeft = currentScrollX > 0;
             var canScrollRight = currentScrollX < maxScrollX;
@@ -83,8 +83,7 @@
                 var intensity = (edgeLeft - viewportX) / edgeSize;
 
                 nextScrollX = nextScrollX - (maxStep * intensity);
-            }
-            else if ( isInRightEdge && canScrollRight ) {
+            } else if (isInRightEdge && canScrollRight) {
                 var intensity = (viewportX - edgeRight) / edgeSize;
 
                 nextScrollX = nextScrollX + (maxStep * intensity);
@@ -94,22 +93,20 @@
                 var intensity = (edgeTop - viewportY) / edgeSize;
 
                 nextScrollY = nextScrollY - (maxStep * intensity);
-            }
-            else if (isInBottomEdge && canScrollDown) {
+            } else if (isInBottomEdge && canScrollDown) {
                 var intensity = (viewportY - edgeBottom) / edgeSize;
 
-                nextScrollY = nextScrollY + ( maxStep * intensity );
+                nextScrollY = nextScrollY + (maxStep * intensity);
             }
 
             // Sanitize invalid maximums
             nextScrollX = Math.max(0, Math.min(maxScrollX, nextScrollX));
             nextScrollY = Math.max(0, Math.min(maxScrollY, nextScrollY));
 
-            if (nextScrollX !== currentScrollX || nextScrollY !== currentScrollY ) {
-                window.scrollTo( nextScrollX, nextScrollY );
+            if (nextScrollX !== currentScrollX || nextScrollY !== currentScrollY) {
+                window.scrollTo(nextScrollX, nextScrollY);
                 return true;
-            }
-            else {
+            } else {
                 return false;
             }
         }

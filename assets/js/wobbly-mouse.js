@@ -51,20 +51,19 @@ function mousemoveHandler(e) {
 
 function elementClickHandler(e) {
 
-    if(e.target === clickedElement) {
+    if (e.target === clickedElement) {
         // Actual mouse clicked element is the same as the element that the fake cursor would click.
         // This is because we triggered the click or that the positions of the mouse and the fake cursor are both over the same element.
         // Do nothing and pass on the click. Reset the clicked element.
         clickedElement = null;
-    }
-    else {
+    } else {
         // Actual mouse clicked element is NOT the same as the element that the fake cursor would click.
         // Get the element that the fake cursor would click and trigger click on that element.
         e.preventDefault();
 
         clickedElement = document.elementFromPoint(viewportPosX, viewportPosY);
 
-        if(clickedElement) {
+        if (clickedElement) {
             clickedElement.click();
         }
     }
@@ -79,14 +78,16 @@ function setOffset() {
 function addStyles(css) {
     var head, style;
     head = document.getElementsByTagName('head')[0];
-    if (!head) { return; }
+    if (!head) {
+        return;
+    }
     style = document.createElement('style');
     style.type = 'text/css';
     style.innerHTML = css;
     head.appendChild(style);
 }
 
-(function() {
+(function () {
 
     'use strict';
 
